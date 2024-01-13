@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="image_container">
+      <div class="main_image_container">
+        <img src="Images/image1.webp" id="main_img" />
+      </div>
+      <div class="mini_image_container">
+        <img src="/Images/image1.webp" class="mini_img" />
+        <img src="/Images/image2.webp" class="mini_img" />
+        <img src="/Images/image3.png" class="mini_img" />
+        <img src="/Images/image4.jpg" class="mini_img" />
+      </div>
+    </div>
+
+    <div class="info_container">
+      <div class="product_description">
+        <h2>Modern Lamp</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, eaque
+          distinctio. Minima pariatur voluptatum omnis assumenda culpa totam
+          porro eveniet?
+        </p>
+      </div>
+
+      <div class="product_input">
+        <h3>Price</h3>
+        <input type="number" id="price" value=2500>
+      </div>
+
+      <div class="product_input">
+        <h3>Qty</h3>
+        <input type="number" id="qty">
+      </div>
+
+      <div class="product_input">
+        <h3>Subtotal</h3>
+        <input type="number" id="subtotal">
+      </div>
+
+      <div class="product_input">
+        <h3>Tax @ 5%</h3>
+        <input type="number" id="tax">
+      </div>
+
+      <div class="product_input">
+        <h3>Total Amt.</h3>
+        <input type="number" id="total_amt">
+      </div>
+    </div>
+
+    <script>
+      let mainImage = document.getElementById("main_img");
+      let miniImage = document.getElementsByClassName("mini_img");
+
+      miniImage[0].onclick = () => {
+        mainImage.src = miniImage[0].src;
+      };
+
+      miniImage[1].onclick = () => {
+        mainImage.src = miniImage[1].src;
+      };
+
+      miniImage[2].onclick = () => {
+        mainImage.src = miniImage[2].src;
+      };
+
+      miniImage[3].onclick = () => {
+        mainImage.src = miniImage[3].src;
+      };
+
+      function cart(){
+        let a=document.getElementById('price').value
+        let b=document.getElementById('qty').value
+        let x=a*b
+        let y=document.getElementById('subtotal').value=x
+        let c=(a*b)*5/100
+        let d=document.getElementById('tax').value=c
+        let e=x+d
+        let f=document.getElementById('total_amt').value=e
+      }
+      let g=document.getElementById('qty')
+      g.addEventListener('keyup', cart)
+      
+    </script>
+  </body>
+</html>
